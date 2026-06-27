@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.A.R.E. Intake Form</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #081f3f, #0d3c66);
+  color: white;
+}
+
+.container {
+  max-width: 800px;
+  background: white;
+  color: #333;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+h1, h2 {
+  color: #081f3f;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 20px;
+  display: block;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button {
+  background: linear-gradient(135deg, #1fb7b6, #e84c88);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>C.A.R.E. Client Intake Form</h1>
+<p>Please complete this form so we can best support your college and career journey.</p>
+
+<form action="mailto:Blahblahblah@gmail.com" method="post" enctype="text/plain">
+
+<h2>Student Information</h2>
+<label>Student Full Name</label>
+<input required>
+
+<label>Date of Birth</label>
+<input type="date" required>
+
+<label>Current Grade Level</label>
+<select required>
+  <option>9th</option><option>10th</option><option>11th</option><option>12th</option>
+  <option>College Student</option><option>Gap Year</option>
+</select>
+
+<label>High School / College Name</label>
+<input required>
+
+<h2>Parent / Guardian Information</h2>
+<label>Parent/Guardian Name</label>
+<input>
+
+<label>Email</label>
+<input type="email" required>
+
+<label>Phone Number</label>
+<input type="tel" required>
+
+<h2>Academic Background</h2>
+<label>Current GPA (if known)</label>
+<input>
+
+<label>Standardized Tests Taken</label>
+<textarea placeholder="SAT, ACT, PSAT, none yet"></textarea>
+
+<h2>College Planning Status</h2>
+<label>Where are you in the college process?</label>
+<select>
+  <option>Just starting</option>
+  <option>Exploring colleges</option>
+  <option>Working on applications</option>
+  <option>Applications submitted</option>
+</select>
+
+<h2>Career Interests</h2>
+<label>Intended Major(s) or Career Interests</label>
+<textarea></textarea>
+
+<h2>Financial Aid & FAFSA</h2>
+<label>Will you be applying for financial aid?</label>
+<select>
+  <option>Yes</option>
+  <option>No</option>
+  <option>Not sure</option>
+</select>
+
+<label>FAFSA Status</label>
+<select>
+  <option>Not started</option>
+  <option>In progress</option>
+  <option>Submitted</option>
+</select>
+
+<h2>Services Needed</h2>
+<label>What support are you looking for?</label>
+<textarea placeholder="College list, essays, FAFSA, scholarships, etc."></textarea>
+
+<h2>Package Interest</h2>
+<select>
+  <option>C.A.R.E. Start</option>
+  <option>C.A.R.E. Advance</option>
+  <option>C.A.R.E. Complete</option>
+  <option>Not sure yet</option>
+</select>
+
+<h2>Consent</h2>
+<label>
+<input type="checkbox" required>
+ I understand this form does not guarantee services and that consultation is required.
+</label>
+
+<button type="submit">Submit Intake Form</button>
+</form>
+
+</div>
+
+</body>
+</html>
