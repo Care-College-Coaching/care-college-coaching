@@ -59,6 +59,10 @@ button {
   margin-top: 30px;
   width: 100%;
 }
+
+button:hover {
+  opacity: 0.9;
+}
 </style>
 </head>
 
@@ -68,84 +72,93 @@ button {
 <h1>C.A.R.E. Client Intake Form</h1>
 <p>Please complete this form so we can best support your college and career journey.</p>
 
-<form action="mailto:Blahblahblah@gmail.com" method="post" enctype="text/plain">
+<form action="https://formspree.io/f/mgojznea" method="POST">
 
 <h2>Student Information</h2>
 <label>Student Full Name</label>
-<input required>
+<input type="text" name="student_name" required>
 
 <label>Date of Birth</label>
-<input type="date" required>
+<input type="date" name="dob" required>
 
 <label>Current Grade Level</label>
-<select required>
-  <option>9th</option><option>10th</option><option>11th</option><option>12th</option>
-  <option>College Student</option><option>Gap Year</option>
+<select name="grade_level" required>
+  <option value="">Select Grade Level</option>
+  <option value="9th">9th</option>
+  <option value="10th">10th</option>
+  <option value="11th">11th</option>
+  <option value="12th">12th</option>
+  <option value="College Student">College Student</option>
+  <option value="Gap Year">Gap Year</option>
 </select>
 
 <label>High School / College Name</label>
-<input required>
+<input type="text" name="school_name" required>
 
 <h2>Parent / Guardian Information</h2>
 <label>Parent/Guardian Name</label>
-<input>
+<input type="text" name="parent_name">
 
 <label>Email</label>
-<input type="email" required>
+<input type="email" name="email" required>
 
 <label>Phone Number</label>
-<input type="tel" required>
+<input type="tel" name="phone" required>
 
 <h2>Academic Background</h2>
 <label>Current GPA (if known)</label>
-<input>
+<input type="text" name="gpa">
 
 <label>Standardized Tests Taken</label>
-<textarea placeholder="SAT, ACT, PSAT, none yet"></textarea>
+<textarea name="tests" placeholder="SAT, ACT, PSAT, none yet"></textarea>
 
 <h2>College Planning Status</h2>
 <label>Where are you in the college process?</label>
-<select>
-  <option>Just starting</option>
-  <option>Exploring colleges</option>
-  <option>Working on applications</option>
-  <option>Applications submitted</option>
+<select name="college_status">
+  <option value="">Select Status</option>
+  <option value="Just starting">Just starting</option>
+  <option value="Exploring colleges">Exploring colleges</option>
+  <option value="Working on applications">Working on applications</option>
+  <option value="Applications submitted">Applications submitted</option>
 </select>
 
 <h2>Career Interests</h2>
 <label>Intended Major(s) or Career Interests</label>
-<textarea></textarea>
+<textarea name="career_interests"></textarea>
 
 <h2>Financial Aid & FAFSA</h2>
 <label>Will you be applying for financial aid?</label>
-<select>
-  <option>Yes</option>
-  <option>No</option>
-  <option>Not sure</option>
+<select name="financial_aid">
+  <option value="">Select Option</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+  <option value="Not sure">Not sure</option>
 </select>
 
 <label>FAFSA Status</label>
-<select>
-  <option>Not started</option>
-  <option>In progress</option>
-  <option>Submitted</option>
+<select name="fafsa_status">
+  <option value="">Select Status</option>
+  <option value="Not started">Not started</option>
+  <option value="In progress">In progress</option>
+  <option value="Submitted">Submitted</option>
 </select>
 
 <h2>Services Needed</h2>
 <label>What support are you looking for?</label>
-<textarea placeholder="College list, essays, FAFSA, scholarships, etc."></textarea>
+<textarea name="services" placeholder="College list, essays, FAFSA, scholarships, etc."></textarea>
 
 <h2>Package Interest</h2>
-<select>
-  <option>C.A.R.E. Start</option>
-  <option>C.A.R.E. Advance</option>
-  <option>C.A.R.E. Complete</option>
-  <option>Not sure yet</option>
+<select name="package_interest">
+  <option value="">Select Package</option>
+  <option value="C.A.R.E. Start">C.A.R.E. Start</option>
+  <option value="C.A.R.E. Advance">C.A.R.E. Advance</option>
+  <option value="C.A.R.E. Complete">C.A.R.E. Complete</option>
+  <option value="Not sure yet">Not sure yet</option>
 </select>
 
 <h2>Consent</h2>
 <label>
-<input type="checkbox" required>
+<input type="checkbox" name="consent" required>
  I understand this form does not guarantee services and that consultation is required.
 </label>
 
