@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College & Career Coaching</title>
+<meta name="description" content="C.A.R.E. College & Career Coaching — College advising, career planning, and financial aid support for students and families.">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -13,17 +15,38 @@
   --teal: #1fb7b6;
   --pink: #e84c88;
   --light: #f7f9fc;
+  --text: #21304a;   /* dark navy-gray for primary text */
+  --muted: #55606a;  /* secondary copy color */
 }
 
-* {
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  left: 16px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background: var(--navy);
+  color: white;
+  border-radius: 6px;
+  z-index: 1000;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #ffffff;
-  color: #fff;
+  color: var(--text);
 }
 
 /* HERO */
@@ -31,25 +54,37 @@ body {
   padding: 80px 20px;
   text-align: center;
   background: linear-gradient(135deg, #f7f9fc, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-  color: var(--navy);
-}
-
-.hero p {
-  font-size: 1.2rem;
-  opacity: 0.7;
-  color: #333;
+.header-inner {
+  max-width: 900px;
+  width: 100%;
 }
 
 .logo {
-  max-width: 200px;
+  max-width: 220px;
   width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin: 0 auto 18px;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  margin: 0.25rem 0 0.5rem;
+  color: var(--navy);
+  line-height: 1.02;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  color: var(--muted);
+  margin: 12px 0 0;
 }
 
 /* WAVE SECTION */
@@ -62,40 +97,27 @@ body {
 }
 
 /* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
+.container { max-width: 1100px; margin: auto; }
 
 /* HEADINGS */
-h2 {
-  color: var(--navy);
-  margin-bottom: 20px;
-}
+h2 { color: var(--navy); margin-bottom: 20px; }
 
-h3 {
-  color: var(--teal);
-}
+h3 { color: var(--teal); }
 
 /* CARDS */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
 
 .card {
   background: white;
   border-radius: 18px;
   padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
+.card p { color: var(--muted); line-height: 1.6; }
+
 /* ICON BAR */
-.icon {
-  font-size: 1.8rem;
-  color: var(--pink);
-}
+.icon { font-size: 1.8rem; color: var(--pink); }
 
 /* BUTTON */
 .button {
@@ -107,54 +129,46 @@ h3 {
   text-decoration: none;
   font-weight: 600;
   margin-top: 15px;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s;
+  box-shadow: 0 8px 20px rgba(31,183,182,0.12);
 }
+.button:hover,
+.button:focus { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(31,183,182,0.14); outline: none; }
+.button:focus-visible { outline: 3px solid rgba(31,183,182,0.18); }
 
 /* ROADMAP */
-.roadmap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 20px;
-}
+.roadmap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px; }
 
-.step {
-  background: linear-gradient(135deg, var(--navy), #123b63);
-  color: white;
-  border-radius: 18px;
-  padding: 25px;
-}
+.step { background: linear-gradient(135deg, var(--navy), #123b63); color: white; border-radius: 18px; padding: 25px; }
 
 /* FOOTER */
-footer {
-  background: var(--navy);
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
-  opacity: 0.8;
-  color: white;
-}
+footer { background: var(--navy); text-align: center; padding: 40px 20px; font-size: 0.95rem; color: white; }
+footer a { color: #fff; text-decoration: underline; }
 
 /* Small-screen tweaks */
 @media (max-width: 480px) {
-  .hero {
-    padding: 60px 16px;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+  .hero { padding: 48px 16px; }
+  .hero h1 { font-size: 1.9rem; }
+  .logo { max-width: 160px; }
 }
+
 </style>
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="logo.png" alt="C.A.R.E. Logo" class="logo">
-  <h1>College & Career Coaching</h1>
-  <p>Empowering students. Supporting families. Building futures.</p>
-</section>
+<header role="banner">
+  <section class="hero">
+    <div class="header-inner">
+      <img src="logo.png" alt="C.A.R.E. College & Career Coaching logo" class="logo" width="220" height="220">
+      <h1>College & Career Coaching</h1>
+      <p>Empowering students. Supporting families. Building futures.</p>
+    </div>
+  </section>
+</header>
 
-<!-- MAIN CONTENT -->
+<main id="main" role="main">
 <section class="wave">
   <div class="container">
 
@@ -172,19 +186,19 @@ footer {
     <h2 style="margin-top:60px;">What We Offer</h2>
     <div class="cards">
       <div class="card">
-        <div class="icon">🎓</div>
+        <div class="icon" aria-hidden="true">🎓</div>
         <h3>College Admissions</h3>
         <p>College lists, applications, essays, Common App & ApplyTexas support.</p>
       </div>
 
       <div class="card">
-        <div class="icon">💼</div>
+        <div class="icon" aria-hidden="true">💼</div>
         <h3>Career Planning</h3>
         <p>Career exploration, resumes, leadership and postsecondary planning.</p>
       </div>
 
       <div class="card">
-        <div class="icon">💰</div>
+        <div class="icon" aria-hidden="true">💰</div>
         <h3>Financial Aid</h3>
         <p>FAFSA guidance, scholarship strategies, and financial readiness.</p>
       </div>
@@ -227,11 +241,27 @@ footer {
 
   </div>
 </section>
+</main>
 
-<footer>
-  📞 678-478-1874 | ✉️ Blahblahblah@gmail.com  
-  <br>© 2026 C.A.R.E. College & Career Coaching
+<footer role="contentinfo">
+  <div style="max-width:900px;margin:0 auto;padding:0 16px;">
+    <p style="margin:0 0 8px;"> <a href="tel:+16784781874">📞 678-478-1874</a> | <a href="mailto:info@carecollegecoaching.com">✉️ info@carecollegecoaching.com</a></p>
+    <p style="margin:0;">© 2026 C.A.R.E. College & Career Coaching</p>
+  </div>
 </footer>
+
+<!-- Structured data (LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "C.A.R.E. College & Career Coaching",
+  "url": "https://care-college-coaching.github.io/care-college-coaching/",
+  "telephone": "+1-678-478-1874",
+  "description": "College advising, career planning, and financial aid support for students and families.",
+  "logo": "https://care-college-coaching.github.io/care-college-coaching/logo.png"
+}
+</script>
 
 </body>
 </html>
